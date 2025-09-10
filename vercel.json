@@ -1,13 +1,18 @@
 {
+  "version": 2,
   "functions": {
     "api/index.php": {
-      "runtime": "@php-runtime/vercel-php@0.6.0"
+      "runtime": "vercel-php@0.6.0"
     }
   },
   "routes": [
     {
       "src": "/(css|js|img|assets|favicon.ico)/(.*)",
       "dest": "/public/$1/$2"
+    },
+    {
+      "src": "/api/(.*)",
+      "dest": "/api/index.php"
     },
     {
       "src": "/(.*)",
@@ -18,12 +23,20 @@
     "APP_NAME": "1811 Store",
     "APP_ENV": "production",
     "APP_DEBUG": "false",
-    "APP_URL": "https://your-project-name.vercel.app",
+    "APP_URL": "https://1811-store.vercel.app",
     "APP_KEY": "base64:zfj8yw75cX4NoybyjzmuK8hwdCq5tG83jK/LBcz31k8=",
+    "APP_LOCALE": "en",
+    "APP_FALLBACK_LOCALE": "en",
     "LOG_CHANNEL": "stderr",
     "LOG_LEVEL": "error",
-    "CACHE_STORE": "array",
-    "SESSION_DRIVER": "array",
-    "QUEUE_CONNECTION": "sync"
-  }
+    "CACHE_STORE": "file",
+    "SESSION_DRIVER": "file",
+    "QUEUE_CONNECTION": "sync",
+    "FILESYSTEM_DISK": "local",
+    "MAIL_MAILER": "smtp",
+    "MAIL_HOST": "smtp.gmail.com",
+    "MAIL_PORT": "587",
+    "MAIL_ENCRYPTION": "tls"
+  },
+  "outputDirectory": "public"
 }
