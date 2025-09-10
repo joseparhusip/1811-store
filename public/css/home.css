@@ -1,0 +1,258 @@
+/* --- General Buttons --- */
+.btn {
+    display: inline-block;
+    padding: 12px 30px;
+    border-radius: 50px;
+    font-weight: 600;
+    text-align: center;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.btn-primary {
+    background-color: var(--primary-color);
+    color: #fff;
+}
+.btn-primary:hover {
+    background-color: #3b3ee8;
+}
+
+.btn-secondary {
+    background: var(--secondary-gradient);
+    color: #fff;
+}
+.btn-secondary:hover {
+    opacity: 0.9;
+}
+
+
+/* --- Hero Section --- */
+.hero-section {
+    background-color: #f0f2f5;
+    padding: 50px 0;
+}
+.hero-container {
+    display: flex;
+    align-items: center;
+    gap: 50px;
+}
+.hero-image {
+    flex: 1;
+}
+.hero-image img {
+    width: 100%;
+    max-width: 450px;
+    height: auto;
+    object-fit: cover;
+    border-radius: 10px;
+}
+.hero-content {
+    flex: 1;
+}
+.hero-content p {
+    font-size: 18px;
+    font-weight: 500;
+}
+.hero-content h1 {
+    font-size: 72px;
+    font-weight: 900;
+    margin: 10px 0 30px;
+    line-height: 1.1;
+}
+.hero-buttons {
+    display: flex;
+    gap: 20px;
+}
+
+/* --- Category Section --- */
+.category-section {
+    padding: 80px 0;
+}
+.category-container {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 30px;
+}
+.category-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 10px;
+}
+.category-card img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+    transition: transform 0.4s ease;
+}
+.category-card:hover img {
+    transform: scale(1.05);
+}
+
+/* --- Product Overview Section --- */
+.product-overview-section {
+    padding: 0 0 80px;
+}
+.product-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 40px;
+}
+.product-header-title {
+    flex-grow: 1;
+}
+.product-header-title h2 {
+    font-size: 32px;
+    margin-bottom: 15px;
+}
+.product-nav {
+    display: flex;
+    gap: 30px;
+}
+.product-nav a {
+    color: #888;
+    font-weight: 500;
+    position: relative;
+    padding-bottom: 5px;
+}
+.product-nav a.active, .product-nav a:hover {
+    color: var(--dark-color);
+}
+.product-nav a.active::after {
+    content: '';
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 2px;
+    background-color: var(--primary-color);
+}
+
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* [PERUBAHAN] Menggunakan Flexbox untuk alignment */
+.product-card {
+    display: flex;
+    flex-direction: column; /* Menumpuk item secara vertikal */
+}
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 15px;
+}
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px; /* Sedikit margin bawah */
+    line-height: 1.4; /* Memberi ruang jika judul 2 baris */
+}
+
+/* [TAMBAHAN] Style untuk footer kartu produk */
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* KUNCI UTAMA: Mendorong elemen ini ke bawah */
+    padding-top: 5px; /* Jarak dari judul di atasnya */
+}
+
+.product-footer p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+
+/* [PERUBAHAN] Ikon tidak lagi di-position absolute */
+.product-card .cart-icon {
+    font-size: 24px;
+    color: #555;
+    transition: color 0.3s;
+}
+.product-card .cart-icon:hover {
+    color: var(--primary-color);
+}
+.load-more-container {
+    text-align: center;
+    margin-top: 50px;
+}
+.btn-load-more {
+    background-color: #e9e9e9;
+    color: var(--text-color);
+    padding: 12px 50px;
+}
+.btn-load-more:hover {
+    background-color: #ddd;
+}
+
+
+/* --- Media Queries untuk Tampilan Tablet (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+    }
+}
+
+
+/* --- Media Queries untuk Tampilan Ponsel (max-width: 768px) --- */
+@media (max-width: 768px) {
+    /* --- Penyesuaian Hero Section --- */
+    .hero-container {
+        flex-direction: column-reverse;
+        text-align: center;
+    }
+    .hero-content h1 {
+        font-size: 48px;
+    }
+    .hero-buttons {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+
+    /* --- Penyesuaian Category Section --- */
+    .category-section {
+        padding: 60px 0;
+    }
+    /* [PERUBAHAN] Kategori diubah menjadi 2 kolom */
+    .category-container {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 15px;
+    }
+
+    /* --- Penyesuaian Product Section --- */
+    .product-overview-section {
+        padding-bottom: 60px;
+    }
+    .product-header {
+        flex-direction: column;
+        gap: 20px;
+    }
+    .product-header-title {
+        text-align: center;
+    }
+    .product-nav {
+        justify-content: center;
+        flex-wrap: wrap;
+    }
+    .product-header-title h2 {
+        font-size: 28px;
+    }
+
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr);
+        gap: 20px;
+    }
+
+    .load-more-container {
+        margin-top: 40px;
+    }
+    .btn-load-more {
+        width: 100%;
+    }
+}
