@@ -1,35 +1,29 @@
 {
-    "version": 2,
-    "framework": null,
-    "builds": [
-        {
-            "src": "public/index.php",
-            "use": "@php-runtime/vercel-php"
-        }
-    ],
-    "routes": [
-        {
-            "src": "/(css|js|img|assets)/(.*)",
-            "dest": "/public/$1/$2"
-        },
-        {
-            "src": "/(.*)",
-            "dest": "/public/index.php"
-        }
-    ],
-    "env": {
-        "APP_NAME": "1811 Store",
-        "APP_ENV": "production",
-        "APP_DEBUG": "false",
-        "APP_URL": "https://your-project-name.vercel.app",
-
-        "APP_KEY": "base64:zfj8yw75cX4NoybyjzmuK8hwdCq5tG83jK/LBcz31k8=",
-
-        "LOG_CHANNEL": "stderr",
-        "LOG_LEVEL": "error",
-        
-        "CACHE_STORE": "array",
-        "SESSION_DRIVER": "array",
-        "QUEUE_CONNECTION": "sync"
+  "functions": {
+    "api/index.php": {
+      "runtime": "@php-runtime/vercel-php@latest"
     }
+  },
+  "routes": [
+    {
+      "src": "/(css|js|img|assets|favicon.ico)/(.*)",
+      "dest": "/public/$1/$2"
+    },
+    {
+      "src": "/(.*)",
+      "dest": "/api/index.php"
+    }
+  ],
+  "env": {
+    "APP_NAME": "1811 Store",
+    "APP_ENV": "production",
+    "APP_DEBUG": "false",
+    "APP_URL": "https://your-project-name.vercel.app",
+    "APP_KEY": "base64:zfj8yw75cX4NoybyjzmuK8hwdCq5tG83jK/LBcz31k8=",
+    "LOG_CHANNEL": "stderr",
+    "LOG_LEVEL": "error",
+    "CACHE_STORE": "array",
+    "SESSION_DRIVER": "array",
+    "QUEUE_CONNECTION": "sync"
+  }
 }
