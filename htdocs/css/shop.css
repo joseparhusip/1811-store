@@ -1,0 +1,81 @@
+/* --- Variable Definitions --- */
+:root {
+    --primary-color: #5458F7;
+    --dark-color: #1a1a1a;
+    --text-color: #333;
+}
+
+/* --- Shop Section --- */
+.shop-section {
+    padding-top: 40px; /* Menambahkan sedikit jarak dari header */
+}
+.shop-container {
+    padding-bottom: 80px;
+}
+
+/* --- Shop Products (Main Content) --- */
+.product-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 30px;
+}
+
+/* --- [PERBAIKAN] Product Card Styles with Flexbox alignment --- */
+.product-card {
+    display: flex;
+    flex-direction: column; /* Menumpuk item secara vertikal */
+}
+.product-card img {
+    width: 100%;
+    border-radius: 10px;
+    background-color: #f7f7f7;
+    margin-bottom: 15px;
+    object-fit: cover;
+}
+.product-card h3 {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+    line-height: 1.4;
+}
+.product-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: auto; /* KUNCI UTAMA: Mendorong elemen ini ke bawah */
+    padding-top: 5px;
+}
+.product-footer p {
+    font-size: 16px;
+    font-weight: 500;
+    color: #555;
+}
+.product-card .cart-icon {
+    font-size: 24px;
+    color: #555;
+    transition: color 0.3s;
+}
+.product-card .cart-icon:hover {
+    color: var(--primary-color);
+}
+
+/* --- [DIHAPUS] Style untuk pagination sudah dihilangkan dari sini --- */
+
+/* =========================================== */
+/* --- Media Queries for Mobile --- */
+/* =========================================== */
+
+/* --- Tampilan Tablet (max-width: 992px) --- */
+@media (max-width: 992px) {
+    .product-grid {
+        grid-template-columns: repeat(3, 1fr); /* Tetap 3 kolom di tablet */
+    }
+}
+
+/* --- Tampilan Ponsel (max-width: 768px) --- */
+@media (max-width: 768px) {
+    .product-grid {
+        grid-template-columns: repeat(2, 1fr); /* Menjadi 2 kolom di ponsel */
+        gap: 20px;
+    }
+}

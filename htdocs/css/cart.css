@@ -1,0 +1,272 @@
+/* Styling untuk Halaman Keranjang */
+.cart-section {
+    padding: 60px 0;
+    font-family: 'Inter', sans-serif;
+    background-color: #f9f9f9;
+    min-height: 70vh;
+}
+
+.cart-section .container {
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+.alert-success {
+    background-color: #d4edda;
+    color: #155724;
+    padding: 15px;
+    border: 1px solid #c3e6cb;
+    border-radius: 5px;
+    margin-bottom: 20px;
+}
+
+.cart-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 30px;
+}
+
+/* Kolom Kiri: Daftar Item */
+.cart-items {
+    flex: 2;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-header {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1.5fr 1.5fr 0.5fr;
+    gap: 15px;
+    padding-bottom: 15px;
+    border-bottom: 1px solid #eee;
+    font-weight: 600;
+    color: #888;
+    text-transform: uppercase;
+    font-size: 0.8rem;
+}
+
+.cart-item {
+    display: grid;
+    grid-template-columns: 3fr 1fr 1.5fr 1.5fr 0.5fr;
+    gap: 15px;
+    align-items: center;
+    padding: 20px 0;
+    border-bottom: 1px solid #eee;
+}
+
+.cart-item:last-child {
+    border-bottom: none;
+    padding-bottom: 0;
+}
+
+.item-product {
+    display: flex;
+    align-items: center;
+}
+
+.item-product img {
+    width: 80px;
+    height: 80px;
+    object-fit: cover;
+    border-radius: 5px;
+    margin-right: 15px;
+}
+
+.product-name {
+    font-weight: 600;
+    margin-bottom: 5px;
+}
+
+.product-price {
+    color: #666;
+}
+
+.item-quantity input {
+    width: 60px;
+    text-align: center;
+    padding: 8px;
+    border: 1px solid #ddd;
+    border-radius: 5px;
+}
+
+.item-total {
+    font-weight: 600;
+}
+
+.item-remove .remove-btn {
+    color: #e74c3c;
+    font-size: 1.2rem;
+    text-decoration: none;
+    transition: color 0.2s;
+}
+
+.item-remove .remove-btn:hover {
+    color: #c0392b;
+}
+
+/* Kolom Kanan: Ringkasan Total */
+.cart-summary {
+    flex: 1;
+    background-color: #fff;
+    padding: 25px;
+    border-radius: 8px;
+    height: fit-content;
+    box-shadow: 0 2px 10px rgba(0,0,0,0.05);
+}
+
+.cart-summary h3 {
+    margin-bottom: 20px;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 15px;
+}
+
+.summary-row {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    color: #555;
+}
+
+.summary-row.total {
+    font-weight: 700;
+    font-size: 1.2rem;
+    color: #111;
+    margin-top: 20px;
+    padding-top: 20px;
+    border-top: 1px solid #eee;
+}
+
+.checkout-btn {
+    width: 100%;
+    padding: 15px;
+    font-size: 1rem;
+    font-weight: 600;
+    color: #fff;
+    background-color: #007bff;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    text-transform: uppercase;
+    transition: background-color 0.3s ease;
+}
+
+.checkout-btn:hover {
+    background-color: #0056b3;
+}
+
+/* Tampilan jika keranjang kosong */
+.cart-empty {
+    text-align: center;
+    padding: 80px 20px;
+    background-color: #fff;
+    border-radius: 8px;
+}
+
+.cart-empty h2 {
+    margin-bottom: 30px;
+}
+.btn-primary {
+    display: inline-block;
+    padding: 12px 30px;
+    background-color: #111;
+    color: #fff;
+    text-decoration: none;
+    border-radius: 5px;
+    font-weight: 600;
+}
+
+/* ======================================================= */
+/* [PENAMBAHAN] Media Query untuk Tampilan Mobile (Responsive) */
+/* ======================================================= */
+@media (max-width: 992px) { /* Breakpoint lebih besar agar summary pindah ke bawah lebih cepat */
+    .cart-container {
+        flex-direction: column;
+    }
+    .cart-summary {
+        min-width: 0;
+    }
+}
+
+@media (max-width: 768px) {
+    .cart-section {
+        padding: 30px 0;
+    }
+    .cart-items {
+        padding: 15px;
+    }
+
+    /* 1. Sembunyikan header tabel di mobile */
+    .cart-header {
+        display: none;
+    }
+
+    /* 2. Ubah setiap item menjadi card */
+    .cart-item {
+        /* Hapus layout grid desktop */
+        display: grid;
+        grid-template-columns: 80px 1fr; /* Kolom untuk gambar dan sisanya */
+        grid-template-rows: auto;
+        gap: 0 15px; /* Hanya gap kolom */
+        position: relative;
+        padding: 15px 0;
+    }
+
+    /* 3. Posisikan setiap bagian di dalam card */
+    .item-product {
+       /* Biarkan gambar dan nama produk mengalir secara alami */
+       grid-column: 1 / 3; /* Ambil space penuh di baris pertama */
+       margin-bottom: 15px;
+    }
+
+    .item-product img {
+        width: 60px;
+        height: 60px;
+    }
+    
+    .product-name {
+        font-size: 0.9rem;
+    }
+
+    /* 4. Gunakan pseudo-element untuk menambahkan label */
+    .item-size::before, .item-quantity::before, .item-total::before {
+        font-weight: 600;
+        color: #888;
+        display: inline-block;
+        width: 80px;
+    }
+
+    .item-size, .item-quantity, .item-total {
+        grid-column: 1 / 3; /* Posisikan di bawah product */
+        display: flex;
+        align-items: center;
+        padding: 8px 0;
+        border-top: 1px solid #f0f0f0;
+    }
+    
+    .item-size::before {
+        content: "Size";
+    }
+
+    .item-quantity::before {
+        content: "Quantity";
+    }
+
+    .item-total::before {
+        content: "Total";
+    }
+    
+    .item-quantity input {
+        width: 50px;
+        padding: 5px;
+    }
+
+    /* 5. Posisikan tombol hapus */
+    .item-remove {
+        position: absolute;
+        top: 15px;
+        right: 0;
+    }
+}

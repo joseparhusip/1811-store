@@ -1,0 +1,251 @@
+/* --- Styling Halaman Login & Signup --- */
+.auth-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 80vh; /* Mengisi tinggi layar */
+    padding: 40px 20px;
+    font-family: 'Inter', sans-serif;
+}
+
+.auth-form {
+    width: 100%;
+    max-width: 400px; /* Lebar maksimal form di desktop */
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.auth-logo {
+    margin-bottom: 40px;
+    text-align: center;
+}
+
+.auth-logo img {
+    max-width: 200px; /* Lebar maksimal logo */
+    height: auto;     /* Menjaga rasio aspek gambar */
+}
+
+.form-group {
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.form-group label {
+    display: block;
+    margin-bottom: 8px;
+    font-weight: 500;
+    color: #333;
+}
+
+.form-group input {
+    width: 100%;
+    padding: 12px 15px;
+    border: 1px solid #e0e0e0;
+    background-color: #f2f2f2;
+    border-radius: 5px;
+    font-size: 1rem;
+    transition: border-color 0.3s;
+}
+
+.form-group input:focus {
+    outline: none;
+    border-color: #333;
+}
+
+/* Wrapper untuk ikon mata pada input password */
+.password-wrapper {
+    position: relative;
+    width: 100%;
+}
+.password-wrapper .toggle-password {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    cursor: pointer;
+    color: #888;
+}
+
+.auth-options {
+    width: 100%;
+    text-align: right;
+    margin-top: -10px;
+    margin-bottom: 25px;
+}
+
+.auth-options a {
+    color: #555;
+    text-decoration: none;
+    font-size: 0.9rem;
+}
+
+.auth-btn {
+    width: 100%;
+    padding: 15px;
+    background-color: #000;
+    color: #fff;
+    border: none;
+    border-radius: 5px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    transition: background-color 0.3s;
+}
+
+.auth-btn:hover {
+    background-color: #333;
+}
+
+.auth-switch {
+    margin-top: 30px;
+    font-size: 0.95rem;
+    color: #555;
+    text-align: center;
+}
+
+.auth-switch a {
+    color: #007bff;
+    text-decoration: none;
+    font-weight: 600;
+}
+
+/* ==============================================
+   STYLING UNTUK HALAMAN PROFIL
+==============================================
+*/
+.profile-container {
+    background-color: #f7f7f7;
+    padding: 50px 20px;
+    font-family: 'Inter', sans-serif;
+    min-height: 80vh;
+}
+
+.profile-card {
+    max-width: 700px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 15px rgba(0,0,0,0.08);
+    overflow: hidden;
+}
+
+.profile-header {
+    background-color: #1a1a1a;
+    color: #fff;
+    padding: 30px;
+    text-align: center;
+}
+
+/* Wrapper untuk Avatar & Tombol Upload */
+.avatar-upload-wrapper {
+    position: relative;
+    width: 100px;
+    height: 100px;
+    margin: 0 auto 15px;
+}
+
+.profile-avatar {
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background-color: #4a4dff;
+    color: #fff;
+    font-size: 48px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid #fff;
+    overflow: hidden; /* Pastikan gambar tidak keluar dari lingkaran */
+}
+
+/* Styling untuk tombol edit avatar */
+.avatar-edit-button {
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    background-color: #fff;
+    color: #1a1a1a;
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 18px;
+    cursor: pointer;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.2);
+    transition: background-color 0.3s, color 0.3s;
+}
+
+.avatar-edit-button:hover {
+    background-color: #f0f0f0;
+}
+
+.profile-header h2 {
+    margin: 0;
+    font-size: 24px;
+}
+
+.profile-header p {
+    margin: 5px 0 0;
+    color: #ccc;
+}
+
+.profile-body {
+    padding: 30px;
+}
+
+.profile-section-title {
+    font-size: 18px;
+    margin-bottom: 20px;
+    color: #333;
+    border-bottom: 1px solid #eee;
+    padding-bottom: 10px;
+}
+
+.form-divider {
+    border: 0;
+    height: 1px;
+    background-color: #eee;
+    margin: 30px 0;
+}
+
+/* ==============================================
+   PENYESUAIAN UNTUK MOBILE
+==============================================
+*/
+@media (max-width: 768px) {
+    .profile-container {
+        padding: 20px 10px;
+    }
+    
+    .profile-body {
+        padding: 20px;
+    }
+
+    .avatar-upload-wrapper {
+        width: 80px;
+        height: 80px;
+    }
+
+    .profile-avatar {
+        font-size: 36px;
+    }
+
+    .avatar-edit-button {
+        width: 28px;
+        height: 28px;
+        font-size: 16px;
+    }
+
+    .auth-container {
+        min-height: unset;
+        align-items: flex-start;
+        padding-top: 20px;
+    }
+}
+
