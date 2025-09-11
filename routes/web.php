@@ -61,6 +61,9 @@ Route::middleware('auth')->group(function () {
     Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
 });
 
+Route::get('/test', function () {
+    return 'Laravel is working on Railway!';
+});
 // Anda mungkin perlu membuat UserController jika belum ada.
 // Gunakan perintah: php artisan make:controller UserController
 // Lalu tambahkan method profile() di dalamnya.
